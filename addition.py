@@ -11,8 +11,29 @@ def add_numbers(request):
     # Perform addition
     result = int(num1) + int(num2)
     
+    # Create HTML response with larger font size
+    html_response = f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Addition Result</title>
+        <style>
+            body {{
+                font-size: 24px; /* Increase font size */
+            }}
+        </style>
+    </head>
+    <body>
+        <h1>Result:</h1>
+        <p>The sum of {num1} and {num2} is: <span style="font-size: 36px;">{result}</span></p>
+    </body>
+    </html>
+    """
+
     # Return the result as a response
-    return Response(str(result))
+    return Response(html_response, content_type='text/html')
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 8080))
