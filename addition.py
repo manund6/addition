@@ -84,3 +84,8 @@ if __name__ == '__main__':
 
 # editing in feature branch
 # added another line
+# dev
+
+# editing in feature branch
+# sample line
+>>>>>>> a6aba81 (edited by nd)
